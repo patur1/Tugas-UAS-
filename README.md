@@ -90,3 +90,69 @@
    if _name_ == "_main_":
        process = Process()
        process.main_menu()
+# Penjelasan
+1.class Data
+Kelas ini bertanggung jawab untuk menyimpan dan mengelola data utama, seperti stok barang dan saldo uang.
+
+Atribut dalam class data
+stock_barang: Menyimpan jumlah stok barang saat ini.
+uang: Menyimpan saldo uang saat ini.
+pemasukan_barang: Mencatat total barang yang masuk.
+pengeluaran_barang: Mencatat total barang yang keluar.
+pemasukan_uang: Mencatat total uang yang masuk.
+pengeluaran_uang: Mencatat total uang yang keluar.
+
+Fungsi dalam class data
+tambah_stock(self, jumlah)
+Menambah stok barang berdasarkan input jumlah.
+Nilai jumlah ditambahkan ke stock_barang dan pemasukan_barang.
+kurangi_stock(self, jumlah)
+Mengurangi stok barang.
+Jika stock_barang mencukupi, maka stock_barang dikurangi sebesar jumlah, dan nilai jumlah ditambahkan ke pengeluaran_barang.
+Jika stok tidak mencukupi, akan menampilkan pesan "Stok barang tidak cukup".
+tambah_uang(self, jumlah)
+Menambah saldo uang.
+Nilai jumlah ditambahkan ke uang dan pemasukan_uang.
+kurangi_uang(self, jumlah)
+Mengurangi saldo uang.
+Jika saldo uang mencukupi, maka uang dikurangi sebesar jumlah, dan nilai jumlah ditambahkan ke pengeluaran_uang.
+Jika saldo tidak mencukupi, akan menampilkan pesan "Saldo uang tidak cukup".
+
+2. class View
+Kelas ini bertugas untuk menampilkan data kepada pengguna.
+Fungsi dalam kelas
+tampilkan_data(data)
+Menampilkan informasi data terkini, seperti jumlah stok barang, saldo uang, pemasukan, dan pengeluaran.
+Digunakan untuk memvisualisasikan data dari objek Data.
+
+3.class Process
+Kelas ini bertindak sebagai pengelola proses interaksi antara pengguna dengan program.
+Atribut dalam class process
+data: Objek dari kelas Data yang digunakan untuk mengelola data.
+view: Objek dari kelas View yang digunakan untuk menampilkan data.
+
+Fungsi dalam class process
+main_menu(self)
+Fungsi ini menyediakan antarmuka menu utama yang memungkinkan pengguna untuk melakukan beberapa tindakan:
+Tambah Stock Barang: Memanggil fungsi tambah_stock dari objek data.
+Kurangi Stock Barang: Memanggil fungsi kurangi_stock dari objek data.
+Tambah Uang: Memanggil fungsi tambah_uang dari objek data.
+Kurangi Uang: Memanggil fungsi kurangi_uang dari objek data.
+Tampilkan Data: Memanggil fungsi tampilkan_data dari objek view.
+Keluar: Menghentikan program.
+
+4. Fungsi Utama
+Bagian terakhir dari kode adalah fungsi untuk menjalankan program:
+
+if __name__ == "__main__":
+    process = Process()
+    process.main_menu()
+if __name__ == "__main__":
+
+Mengecek apakah file ini dijalankan secara langsung atau diimpor sebagai modul. Jika dijalankan langsung, maka program akan memulai proses.
+process = Process()
+
+Membuat objek dari kelas Process.
+process.main_menu()
+
+Menjalankan fungsi main_menu untuk memulai interaksi dengan pengguna.
